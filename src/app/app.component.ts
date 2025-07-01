@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { ContainerComponent } from './componentes/container/container.component';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { SeparadorComponent } from './componentes/separador/separador.component';
+import { ContatoComponent } from './componentes/contato/contato.component';
 
 
 
@@ -17,7 +18,8 @@ import { SeparadorComponent } from './componentes/separador/separador.component'
     CommonModule,
     ContainerComponent,
     CabecalhoComponent,
-    SeparadorComponent
+    SeparadorComponent,
+    ContatoComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
