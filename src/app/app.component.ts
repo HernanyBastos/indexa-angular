@@ -41,9 +41,9 @@ export class AppComponent {
 
   contatos: Contato[] = agenda;
 
-  filtarContatoPorLetraIncial(letra: string): Contato[]{
+  filtrarContatoPorLetraIncial(letra: string): Contato[]{
     return this.contatos.filter( contato => {
-      return contato.nome.startsWith(letra.toLowerCase()) //Caso não funcione coloque o toLowerCase() no nome
+      return contato.nome.toLowerCase().startsWith(letra)
     })
   }
 }

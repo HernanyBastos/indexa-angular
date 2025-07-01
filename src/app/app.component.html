@@ -6,9 +6,9 @@
         {{ letra.toUpperCase() }}
     </app-separador>
 
-    <app-contato nome="Lucas"  telefone="(11) 94341-9945">
-
-    </app-contato>
+    @for (contato of filtrarContatoPorLetraIncial(letra); track contato.id) {
+    <app-contato [nome]="contato.nome"  [telefone]="contato.telefone"></app-contato>
+    }
     }
 
 
