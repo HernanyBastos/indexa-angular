@@ -1,7 +1,13 @@
 <app-container>
     <app-cabecalho />
 
-    @for (letra of alfabeto; track letra) {
+    <input
+    type="search"
+    placeholder="Digite para buscar"
+    [(ngModel)]="filtroPorTexto"
+    />
+
+    @for (letra of letrasComContatosFiltrados; track letra) {
     <app-separador>
         {{ letra.toUpperCase() }}
     </app-separador>
