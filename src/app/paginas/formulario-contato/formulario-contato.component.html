@@ -3,6 +3,10 @@
         <section class="cabecalho-link">
             <img src="assets/logo.png" alt="Logo Indexa">
         </section>
+        <section class="botao-voltar">
+            <img src="assets/arrow.png" alt="">
+            <a routerLink="/lista-contato">Voltar</a>
+        </section>
         <section class="cabecalho-contato">
             <img src="assets/adicionar-contato.png" alt="Ilustração de contato">
             <h1>Adicionar contato</h1>
@@ -50,7 +54,7 @@
             formControlName="observacoes"></textarea>
 
         <section class="botoes">
-            <button type="submit" class="botao-salvar">Salvar contato</button>
+            <button type="submit" [ngClass]="contatoForm.valid ? 'botao-salvar' : 'botao-desabilitado'" [disabled]="contatoForm.invalid">Salvar contato</button>
             <button type="button" class="botao-cancelar">Cancelar</button>
         </section>
     </form>

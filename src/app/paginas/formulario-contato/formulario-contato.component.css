@@ -35,6 +35,17 @@ header .cabecalho-contato {
     margin-top: 32px;
 }
 
+.botao-voltar a{
+    width: 77px;
+    max-width: 100%;
+    margin-left: 8px;
+    color: #0D6EFD;
+    font-family: 'Montserrat';
+    gap: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 h1 {
     font-family: 'Montserrat';
     font-size: 26px;
