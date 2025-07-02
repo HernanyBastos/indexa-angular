@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -8,7 +9,8 @@ import { ContainerComponent } from './componentes/container/container.component'
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { ContatoComponent } from './componentes/contato/contato.component';
-import { FormsModule } from '@angular/forms';
+import { FormularioContatoComponent } from './paginas/formulario-contato/formulario-contato.component';
+
 
 
 interface Contato {
@@ -23,6 +25,7 @@ import agenda from './agenda.json';
 
 
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -32,7 +35,8 @@ import agenda from './agenda.json';
     ContainerComponent,
     CabecalhoComponent,
     SeparadorComponent,
-    ContatoComponent
+    ContatoComponent,
+    FormularioContatoComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
