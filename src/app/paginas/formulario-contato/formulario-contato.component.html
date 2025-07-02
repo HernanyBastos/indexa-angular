@@ -55,7 +55,7 @@
 
         <section class="botoes">
             <button type="submit" [ngClass]="contatoForm.valid ? 'botao-salvar' : 'botao-desabilitado'" [disabled]="contatoForm.invalid">Salvar contato</button>
-            <button type="button" class="botao-cancelar">Cancelar</button>
+            <button type="button" class="botao-cancelar" (click)="cancelar()">Cancelar</button>
         </section>
     </form>
 </app-container>

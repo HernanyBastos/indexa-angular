@@ -10,15 +10,8 @@ import { ContainerComponent } from '../../componentes/container/container.compon
 import { CabecalhoComponent } from '../../componentes/cabecalho/cabecalho.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
 import { ContatoComponent } from '../../componentes/contato/contato.component';
+import { Contato } from '../../componentes/contatos/contato';
 
-
-
-
-interface Contato {
-  id: number;
-  nome: string;
-  telefone: string;
-}
 
 
 @Component({

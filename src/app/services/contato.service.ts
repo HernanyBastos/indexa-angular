@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-
-interface Contato {
-  id: number;
-  nome: string;
-  telefone: string;
-}
+import { Contato } from '../componentes/contatos/contato';
 
 
 @Injectable({
@@ -12,13 +7,7 @@ interface Contato {
 })
 export class ContatoService {
 
-  private contatos: Contato[] = [
-    { "id": 1, "nome": "Ana", "telefone": "29 278869420" },
-    { "id": 2, "nome": "Antônio", "telefone": "38 128451235" },
-    { "id": 2, "nome": "Ágata", "telefone": "38 128451235" },
-    { "id": 3, "nome": "Bruno", "telefone": "95 695521583" },
-    { "id": 4, "nome": "Beatriz", "telefone": "25 854986459" },
-  ]
+  private contatos: Contato[] = []
 
   constructor() {
 
@@ -37,5 +26,8 @@ export class ContatoService {
     return this.contatos;
   }
 
-
+  salvarContato (contato: Contato) {
+    this.contatos.push(contato);
+    localStorage.setItem('contatos', JSON.stringify(this.contatos));
+  }
 }
