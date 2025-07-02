@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 //Componentes
@@ -18,16 +18,18 @@ import { RouterLink } from '@angular/router';
     ContainerComponent,
     SeparadorComponent,
     ReactiveFormsModule
-],
+  ],
   templateUrl: './formulario-contato.component.html',
   styleUrl: './formulario-contato.component.css'
 })
 
-export class FormularioContatoComponent {
+export class FormularioContatoComponent implements OnInit {
 
-  contatoForm: FormGroup;
+  contatoForm!: FormGroup;
 
-  constructor () {
+  //constructor() { }
+
+  ngOnInit() {
     this.contatoForm = new FormGroup({
       nome: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -38,10 +40,11 @@ export class FormularioContatoComponent {
     })
   }
 
+
   onSubmit() {
 
-    if(this.contatoForm.valid){
-    console.log(this.contatoForm.value);
+    if (this.contatoForm.valid) {
+      console.log(this.contatoForm.value);
     }
   }
 }
