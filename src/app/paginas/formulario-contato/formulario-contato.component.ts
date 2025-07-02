@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 //Componentes
 import { ContainerComponent } from "../../componentes/container/container.component";
 import { SeparadorComponent } from "../../componentes/separador/separador.component";
+
 
 @Component({
   selector: 'app-formulario-contato',
@@ -10,11 +12,31 @@ import { SeparadorComponent } from "../../componentes/separador/separador.compon
   imports: [
     ContainerComponent,
     ContainerComponent,
-    SeparadorComponent
+    SeparadorComponent,
+    ReactiveFormsModule
 ],
   templateUrl: './formulario-contato.component.html',
   styleUrl: './formulario-contato.component.css'
 })
 export class FormularioContatoComponent {
 
+  contatoForm: FormGroup;
+
+  constructor () {
+    this.contatoForm = new FormGroup({
+      nome: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      telefone: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      aniversario: new FormControl(''),
+      redes: new FormControl(''),
+      observacoes: new FormControl(''),
+    })
+  }
+
+  onSubmit() {
+
+    if(this.contatoForm.valid){
+    console.log(this.contatoForm.value);
+    }
+  }
 }
